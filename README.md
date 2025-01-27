@@ -5,3 +5,18 @@ LLM -- AI assistant -- Will create agent -- Train [based on data] -- filter data
 
 Python -- datastructure, loops, etc. -- Pandas, tensorflow Library for creating model
 Data Analytics tool -- used for data cleaning
+
+Plant database -- https://www.kaggle.com/datasets/abdallahalidev/plantvillage-dataset
+
+Model Creation Steps
+----------------------
+Input - photo
+Output - name of plant
+
+For Image We need to use CNN Model:
+1. chatgpt code "cnn code to for plant image"
+2. change parameter code
+3. Model training (available in code)
+4. Store vector in Neo4J database - layers.Flatten() -- will give vector
+5. Dense -- Layer of neural network (no action needed)
+6. Inference Model on new images, allowing it to classify or detect objects based on learned features without further adjustment of weights.
