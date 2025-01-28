@@ -8,6 +8,8 @@ Data Analytics tool -- used for data cleaning
 
 Plant database -- https://www.kaggle.com/datasets/abdallahalidev/plantvillage-dataset
 
+How to run Hugging Face Deepseek model in local.? Try it its must. -- https://www.youtube.com/watch?v=7W30oIsOuAM
+
 Model Creation Steps
 ----------------------
 Input - photo
