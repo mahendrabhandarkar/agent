@@ -1,0 +1,24 @@
+what is your role in project
+what is exception
+create a custom exception
+what in thread
+how to implments threads and how many types
+what is diffrence between save and persist method
+diffrence between string buffer and string builder
+diffrence betwwen get and post method
+do you know database which one is you used
+what is the purpose of embeded container
+@generated value annotation 
+@Controller
+@autowired
+@requestControllerr
+what is hibernate 
+WAP for find a number from string
+where you used multithreading in your project
+what is the purpose of inner classes
+where you used in your project
+what is enum 
+which datatype is used assign to password
+which java version is used 
+what is the feature of java 1.8
+where you used feature in your project
