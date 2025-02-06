@@ -87,3 +87,4 @@ Question 40 : How will you make two ambiguity URL working in spring boot without
 Question 41 : What is your application deployment structure ?
 Question 42 : Describe the use of CompletableFuture ?
 Question 43 : Use of String.join(….) in java 8?
+Question 44: Opinionated Approach framework? How Spring boot is Opinionated Approach framework?
