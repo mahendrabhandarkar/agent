@@ -22,3 +22,9 @@ For Image We need to use CNN Model:
 4. Store vector in Neo4J database - layers.Flatten() -- will give vector
 5. Dense -- Layer of neural network (no action needed)
 6. Inference Model on new images, allowing it to classify or detect objects based on learned features without further adjustment of weights.
+
+How to install and configure hashicorp consul on windows?
+How to use consul with spring boot for discovery and config server?
+Alternative of Spring boot API gateway ex: Kong Gateway ?
+
+
