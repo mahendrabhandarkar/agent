@@ -4,8 +4,8 @@ create a custom exception
 what in thread
 how to implments threads and how many types
 what is diffrence between save and persist method
-diffrence between string buffer and string builder
-diffrence betwwen get and post method
+difference between string buffer and string builder
+difference betwwen get and post method
 do you know database which one is you used
 what is the purpose of embeded container
 @generated value annotation 
