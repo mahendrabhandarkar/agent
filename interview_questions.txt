@@ -22,6 +22,7 @@ which datatype is used assign to password
 which java version is used 
 what is the feature of java 1.8. where you used feature in your project.?
 What is concurrent collections in Spring boot?
+What is 12 factor principle in microservice?
 
 Question 1 : How will you simulate concurrent modification through stream API ?
 Question 2 : How many thread will open for parallel stream and how parallel stream internally works ?
