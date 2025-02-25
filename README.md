@@ -30,3 +30,5 @@ How to use gRPC with Spring Boot?
 
 STAN - Structure Analysis for Java
 Puppeteer is a JavaScript library 
+
+https://codeassist.google/ --- Gemini Code Assist for individuals at no cost,
