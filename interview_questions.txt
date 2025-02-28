@@ -33,7 +33,7 @@ Question 5 : What are the changes of pegmen in JDK 8. (PermGen and Meta)?
 Question 6 : What is the difference between normal REST service and Restful WS (Web Service)?
 Question 7 : What are the different types of Http methods and their differences ?
 Question 8 : What is DDOS(denial of service ) attack and how will we prevent from this in our Applications ?
-Question 9 : What is Method Reference and Functional Interface ?
+Question 9 : What is Method Reference and Functional Interface ? Functional Interface? Property of functional interface.
 Question 10 : Please define Overridden rules for default/static method in java 8.
 Question 11 : Questions Related to JAVA Design Patterns mainly
 Creational Design Patters
