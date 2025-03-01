@@ -24,6 +24,9 @@ what is the feature of java 1.8. where you used feature in your project.?
 What is concurrent collections in Spring boot?
 What is 12 factor principle in microservice?
 What is ITSM (IT service management)? What role plays by pivotal cloud foundry (pcf), PagerDuty, Zenduty?
+What is normalization in database. define each normalization process.?
+What is Space Complexity (Memory used by code) and Time Complexity (execution time taken). And how to check that of code.
+
 
 Question 1 : How will you simulate concurrent modification through stream API ?
 Question 2 : How many thread will open for parallel stream and how parallel stream internally works ?
@@ -91,3 +94,7 @@ Question 41 : What is your application deployment structure ?
 Question 42 : Describe the use of CompletableFuture ?
 Question 43 : Use of String.join(….) in java 8?
 Question 44: Opinionated Approach framework? How Spring boot is Opinionated Approach framework?
+
+Code Problem:
+1. A string has a=1, b=2, c=3 and total length of string is 10 and you shift each word by 2nd location then what new word form. example: bca [length=3]
+2. Give how many times a character come in a word. ex: aabccdeeffgg...... answer: a=2, b=1, c=2, etc
