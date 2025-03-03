@@ -4,7 +4,7 @@ create a custom exception
 what in thread
 how to implments threads and how many types
 what is diffrence between save and persist method
-difference between string buffer and string builder
+difference between string buffer and string builder. String pool constrant concept? and why address uses same memory location?
 difference between get and post method
 do you know database which one is you used
 what is the purpose of embeded container
@@ -21,7 +21,7 @@ what is enum
 which datatype is used assign to password
 which java version is used 
 what is the feature of java 1.8. where you used feature in your project.?
-What is concurrent collections in Spring boot?
+What is concurrent collections in Spring boot? Difference between Collection and Collections?
 What is 12 factor principle in microservice?
 What is ITSM (IT service management)? What role plays by pivotal cloud foundry (pcf), PagerDuty, Zenduty?
 What is normalization in database. define each normalization process.?
