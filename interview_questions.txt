@@ -98,3 +98,18 @@ Question 44: Opinionated Approach framework? How Spring boot is Opinionated Appr
 Code Problem:
 1. A string has a=1, b=2, c=3 and total length of string is 10 and you shift each word by 2nd location then what new word form. example: bca [length=3]
 2. Give how many times a character come in a word. ex: aabccdeeffgg...... answer: a=2, b=1, c=2, etc
+3. 		  Arrays.stream(s.split("")).collect(Collectors.groupingBy(e->e,
+		  Collectors.counting())) .entrySet().stream().filter(e->e.getValue() >= 2)
+		  .forEach(e-> System.out.println(e.getKey() + " " + e.getValue()));
+		 
+		
+
+		  Map<String, Long> collect = Arrays.stream(s.split("")).collect(Collectors.groupingBy(e->e,
+		  Collectors.counting()));
+		  
+		  System.out.println(collect);
+		  
+		  HashMap<Object, Object> hashMap = new HashMap<Object, Object>();
+		  hashMap.put("STATUS_OUT", "SUCCESS");
+		  hashMap.put("RESPONSE_OUT", collect);
+		  System.out.println(hashMap);
