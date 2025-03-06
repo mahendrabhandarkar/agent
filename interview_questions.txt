@@ -26,7 +26,7 @@ What is 12 factor principle in microservice?
 What is ITSM (IT service management)? What role plays by pivotal cloud foundry (pcf), PagerDuty, Zenduty?
 What is normalization in database. define each normalization process.?
 What is Space Complexity (Memory used by code) and Time Complexity (execution time taken). And how to check that of code.
-
+Interning of String in Java? intern()?
 
 Question 1 : How will you simulate concurrent modification through stream API ?
 Question 2 : How many thread will open for parallel stream and how parallel stream internally works ?
