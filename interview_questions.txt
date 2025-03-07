@@ -27,6 +27,12 @@ What is ITSM (IT service management)? What role plays by pivotal cloud foundry (
 What is normalization in database. define each normalization process.?
 What is Space Complexity (Memory used by code) and Time Complexity (execution time taken). And how to check that of code.
 Interning of String in Java? intern()?
+What was the issue till Java 7. And what got improved in Java 8?
+What is effect - The table rows will be physically arranged on basis employee id on basis of primary index this is what is does.
+What we achieve with Singleton in java? Eager initialization of Singleton?
+Volatile keyword in java?
+Difference between ArrayList and LinkedList.?
+Threads in Java? Difference between run and start() in threading?
 
 Question 1 : How will you simulate concurrent modification through stream API ?
 Question 2 : How many thread will open for parallel stream and how parallel stream internally works ?
