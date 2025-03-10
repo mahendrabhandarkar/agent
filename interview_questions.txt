@@ -33,6 +33,20 @@ What we achieve with Singleton in java? Eager initialization of Singleton?
 Volatile keyword in java?
 Difference between ArrayList and LinkedList.?
 Threads in Java? Difference between run and start() in threading?
+Stream 3 types:
+1. Input
+2. Intermediate
+3. Collection
+
+No sorting
+variable=l1.stream.sort.Collect
+
+3 reasons concurrent collections:
+1. Data Safety 
+2. Synchronization
+3. 
+
+Fail fast vs fail safe ---- 
 
 Question 1 : How will you simulate concurrent modification through stream API ?
 Question 2 : How many thread will open for parallel stream and how parallel stream internally works ?
