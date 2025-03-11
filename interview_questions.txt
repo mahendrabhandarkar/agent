@@ -133,3 +133,70 @@ Code Problem:
 		  hashMap.put("STATUS_OUT", "SUCCESS");
 		  hashMap.put("RESPONSE_OUT", collect);
 		  System.out.println(hashMap);
+4. Take away words, string, special characters in each seperate arrays from a string.
+
+1. Tell me about your roles in project? --- Gitbucket, Low level design, planning, Done unit testing, 
+2. Why you are looking for job change. --- timming issue
+3. Challenging part in your professional career --- Get requirement from BA and screen planning. In middle of that the requirement. Work on weekends.
+4. Now we start technical interview
+5. Difference between JDK, JRE and JVM.
+6. Difference between = and == 
+7. What is the purpose of Hash Code.
+8. Difference between list and set.
+9. Difference between LinkedList and ArrayList.
+10. What is the meaning of finally block.
+11. What is the need for collection introduced in java. like: Create Object, Play Object. Developer faced issue before collection?
+12. What is fast fill and past set.?
+13. Explain features of Java 8.
+14. Can you explain functional interface?
+15. Different types of commands in SQL. Explain them?
+16. Why truncate is DDL statement.
+17. Difference between inner join and left join? How we decide which join we have to use.
+18. Two tables customers and order. How we can get details of customer who has placed the orders. ---- F
+19. What is normalization? --- Till what Normalization you have used.
+20. Difference between where and having conditions ---
+21. Know about microservices ---
+22. What is Circuit Breaker Pattern ---
+23. API gateway and discovery server? --- 
+24. Liferay - Plugin
+25. FHIR Google Cloud --- HR Client Module --- Google Cloud for security purpose.
+26. Twilio for video processing. --- Whatsapp or OTP
+27. ROLE BASED --- 
+
+Java is not fully Object Oriented Programming
+Wrapper class help us to create object. Java only supports Single and Multi-Level.
+How java multi-level inheritance.
+callable and runnable interface -- Runnable not returns but callable returns. 
+5 types of interface.
+Educator framework pool
+Executor Framework pool
+Application Context types?
+Inversion of Control?
+Configure and WinOd annotation
+BeanFactory design pattern
+Benefits of ORM -- Route collection and drivers, dialect, URL.
+Composition, Agreegation and Specification 
+Difference between WebService and MicroService?
+
+
+Access Modifiers -- Y
+Why String are immutable --- Thread Sabbatle Form --- because of main class.
+What is purpose of HashCode --- N
+Explain why java is not 100% object oriented
+Difference between check and uncheck --- Y
+Check exception is compile time or run-time -- Y
+Difference between throw and throws --- Y
+Difference between HashMap and TreeMap --- Y
+Difference between Comparator and Comparable --- N
+Difference between NullPointerException and ClassNotFoundException
+Difference between thread and runnable?
+What is deadlock and how we can avoid it?
+Oracle EPX -- Finance HR Module
+
+Role in the project ---
+Integrated Paypal, Paytm and 
+Redis -- NoSQL database -- Key value pair
+Reduce the caching mechanism 
+
+Golden Source EDM -- Product for ETL process.
+Cogbee is a virtual interviewing platform that offers AI-driven assessments and expert-led interviews. It helps recruiters and hiring managers identify the best candidates for their organization. 
