@@ -47,6 +47,8 @@ variable=l1.stream.sort.Collect
 3. 
 
 Fail fast vs fail safe ---- 
+System.gc (); and System.runFinalization (); to force garbage collection in Java?
+volatile keyword
 
 Question 1 : How will you simulate concurrent modification through stream API ?
 Question 2 : How many thread will open for parallel stream and how parallel stream internally works ?
