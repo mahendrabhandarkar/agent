@@ -1,0 +1,166 @@
+https://www.youtube.com/watch?v=5zhNfPH-jps
+How to Use Google Gemini Flash 2.0 with Just an API Key in Spring AI
+--
+https://github.com/danvega/hello-flash/blob/master/src/main/resources/application.properties
+
+Google AI Studio --- Use for key generation
+
+
+https://www.youtube.com/watch?v=dffEF9ORVUg
+Getting Started with Ollama, Llama 3.1 and Spring AI
+
+https://github.com/danvega/hello-ollama
+
+Use Ollama model Lama model offline
+
+com.microsoft.semantic-kernel
+
+semantickernel-api
+
+Waves of Disruption -- Cyber Security analytics DNS
+
+Neo4J --- Graph Database
+
+What is good for
+What is not food for
+
+Live telemetry of ships
+
+Its started by IIT bombay boy. Its not usesful for timeseries stuff.
+Not good for chronological data.
+
+How to query the data ---- Track relationships of entities. What time of certain event happens.
+For unstructured data we should use Neo4J. Hybrid databases is also great when you can store relationship.
+
+Graph data structure
+
+Bind DNS Server -- opensource
+Beakning -- concept of malware
+Cypher Query
+
+Integration framework AI -- langchain, etc  -- GraphTrail
+VertexAI ---
+GenAI
+
+Data Architect
+
+Dependencies is the thing of past.
+
+Language model --- 
+
+Peaces tool -- for large chunk data. find context chatgpt, etc. based data. find context.
+
+flutter --- MVMB 
+
+System design round -- giving actual problem and getting it resolved. And constraints in it. Upstox.
+
+Chain of thought model
+
+R1
+Prompt Engineering
+Embeddings
+
+exclidraw for diagram creation -- prototpe, architectural diagram. Calidraw - exclidraw for diagram creation. mermaid live editor. AI bot generate scaffolding.
+
+RAG --- for latest data --- database [NLP]. Document based RAG. Vector database. Extending model capability by adding RAG and Vector database.
+CodeAssist tool. Index project file -- In-person AI.
+
+deepseekR1 deploy on local machine. Ollama on VPS. 1 GB. What is meaning of R1.
+
+Chain of thoughts train --- Learn about it.
+
+floating point set -- its important aspect in model.
+
+
+Bind - Logrorate - postrotate -- SCP --- Basin -- Python -- NeorJ -- Crons tools
+
+visualize data in 3d library.
+
+Domain , Malicious categories.
+
+Neo4J albine tool for large data insertion.
+
+Decisions on Schema --- Asking how to query it.
+
+How to check dns request raised on DNS.  Chromium --- has feature to see what it sent on dns.
+setuid in linux -- to exploit previleges.
+
+aws_neo4j_map -- tool by rudrasecure
+-----------------------------------------------------------------------------------------------------------------------------------
+
+Movies Recommendation chatbot using vertex AI.
+
+Create Knowledge data of AI -- by Neo4J
+
+console.neo4j.io
+
+Ask Recommend by some sci-fi movie - I want to watch a sci-fi movie 
+-- Recommend me a romantic comedy with a happy ending with actor as SRK
+-- I'm in the mood for something romantic
+
+-- Generate vector embeddings on movie overview/ploys using text-embeddings from vertex AI
+-- build a gradio chatbot using gemeini and deploy on hugging face spaces o google cloud run.
+
+Neo4j fundamentals
+
+Graph theory
+
+Nodes can be identified by
+Relations connect two nodes
+Relations has direction
+
+The O(n) problem -- of relation database.
+
+Do you struggle with complex database schemas?
+Do you store hierarchical data.
+Analysze connection between data.
+Graph databases are designed to efficiently 
+
+Cypher codes -- MATCH 
+
+Cypher is GQL [Graph Query Language]. Declarative language that allows you to identify patterns in your data using an ASCII-art style syntax consisting of brackets, dashes and arrows.
+
+READING from Neo4j
+
+Wriring to Neo4J
+
+Setting up the system
+
+https://trygcp.dev/e/gdg-mad-graphdb
+
+https://github.com/sidagarwal04/neo4j-vertexai-codelab.git
+
+mkdir
+cp example.env.env
+vi.env
+make your changes 
+and save it.
+
+pip install -r requirements.txt
+
+langchain, 4j python driver, 
+
+python3 graph_build.py
+
+The Movies Kaggle dataset 
+
+Vector RAG --- chatgpt 
+
+LLM is trained on general information and want specific domain we want to train. Then researchers came in concept.
+
+RAG --- first vectorize the information --- Divide each pds in chunks --- To create embeddings --- 
+
+python3 load_embeddings.py
+
+LOAD CSV with HEADERS https://storage.googleapis.com/neo4j-vertexai-codelab/movie_embeddings.csv
+
+python3 generate_embeddings.py
+
+start the recommend
+
+python3 chatbot.py
+
+goo.gle/clouddevs
+
+graphacademy.neo4j.com -- do certifications
+
