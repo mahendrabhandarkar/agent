@@ -1,0 +1,174 @@
+LLM --- ChatGpt, etc --- Input --> LLM --> Output
+AI Workflows --- Give output based on access tools via LLM. Tool accessed decided by Human Decision Maker.
+AI Agents --- Critique Bot --- 
+---- Single AI Agent --- 
+---- Multi AI Agent --- two or more models used --- 
+		--- Sequential Pattern --- Example: AI Powered Document Processing -- Agent1 [Text Extraction], Agent 2 [Text Summarization], Agent 3 [Action Item Extraction], Agent 4 [Saving to document]
+		--- Hierarchical Pattern --- Example: Writing a report for business decision making --- Manager AI Agent -- Sub Agent 1 [Monitor Market Trends], Sub Agent 2 [Analyses Customer Sentiment], Sub Agent 3 [Tracks Internal Performance Metrics].
+		--- Hybrid Pattern --- Example: An Autonomous Vehicle --- Top Level AI Agent --- Sub Agents ---
+		--- Parallel Agent Design System --- Example: Large Scale 
+		--- Asynchronous Multi Agent System --- Example: AI Powered Cyber Security Threat Detection --- 
+
+Types of AI Agent
+-- Simple Reflex Agent --- Example: Vaccum robot to hit the ball.
+-- Model Based Reflex Agent --- Example: A smart vaccum remembers room layout and adjusts its route.
+-- Goal Based Agent --- Example: An AI Agent give the goal "book a flight to Goa under Rs 5000
+-- Utility Based Agent --- Example: It chooses the flight with best timing, price and airline rating.
+-- Learning Agent --- Example: Agent fine-tuned with feedback. Or an AI assistant that gets better at booking trips for you.
+
+R [Reasonoing] ACT  -- REACT
+
+Anthrophy Cloud
+
+ManasAI -- World first autonomous AI Agent
+Manus --- https://manus.im/
+
+Task Automation Agents: Tools like SugarAGI and autiGPT can automate such workflows using multiple tools in sequence.
+
+Coding Assistant Agent:
+E-Commerce and Product Search Agent:
+Healthcare Assistant Agent : Label: Your AI Co-Doctor
+Personal Travel Agent:
+
+Pose Determination: openpose model
+Pose-to-image: google/vit model
+Image-to-text: vit-gpt2 model
+Text-to-Speech: fastspeech model
+
+Popular AI Agents: BabyAGI, AutoGPT, AgentGPT, crewAI, manus, LangChain v 0.1.0 agents, SuperAGI, MetaGPT, Zapier, JARVIS, etc
+
+AI Agent development from Scratch
+----------------------------------
+Pro: LLM has brain based on data which they are trained. Understand the language and sentiments. And also accept prompts.
+Cons: LLM cannot perform tasks.
+
+ChatGPT works in closed box, They cannot access internet but model can access internet but chatgpt can't. Can they access database of yours. Is they can read and write data.
+
+We need to create such a mechanism so they can perform task on our behalf.
+AI agentic workflow : We build some kind of framework. We will provide developer defined functions [db_write, db_read]. We will give context to gpt that you have functions to process further. We will give auto prompting, we will feed context based on gpt.
+
+Is GPT can't have data of current weather. We will develop.
+
+LLM with tool is known as Agent.
+
+const SYSTEM_PROMPT = `
+You are an AI assistant with START, PLAN, ACTION, Observation and Output State.
+Wait for the user prompt and first PLAN using available tools.
+After Planning, Take the action with appropriate tools and wait for Observation based on Action.
+Once you get the observations, Return the AI response based on START prompt and observations
+
+Strictly follow the JSON output format as in example
+
+function getWeatherDetails(city = '') {
+	if(city.toLowerCase() == 'patiala') return '10C';
+	if(city.toLowerCase() == 'mohali') return '14C';
+	if(city.toLowerCase() == 'banglore') return '20C';
+	if(city.toLowerCase() == 'chandigarh') return '8C';
+	if(city.toLowerCase() == 'delhi') return '12C';
+}
+
+
+const tools = {
+	"getWeatherDetails": getWeatherDetails
+}
+
+Available Tools: 
+- function getWeatherDetails(city: string): string
+getWeatherDetails is a function that accepts city name as string and returns the weather results
+
+Example:
+START
+{"type": "user", "user": "What is the sum of weather of Patiala and Mohali?" }
+{"type": "plan", "plan": "I will call the getWeatherDetails for Patiala"}
+{"type": "action", "function": "getWeatherDetails", "input":"Patiala"}
+{"type": "observation", "observation": "10C"}
+{"type": "plan", "plan": "I will call getWeatherDetails for Mohali"}
+{"type": "action", "function": "getWeatherDetails", "input": "mohali"}
+{"type": "observation", "observation": "14C"}
+{"type": "output", "output": "The sum of weather of Patiala and Mohali is 24C"}
+
+const user = 'Hey, What is weather of Patiala';
+
+async function chat() {
+	const result = await client.chat.completions.create( {
+		model: 'gpt-4',
+		messages: [
+			{ role: "system", content: SYSTEM_PROMPT },
+			{ role: 'user', content: user },
+		],
+	});
+	console.log(result.choices[0].message.content);
+}
+
+chat();
+
+async function chat1() {
+	const result = await client.chat.completions.create( {
+		model: 'gpt-4',
+		messages: [
+			{ role: "system", content: SYSTEM_PROMPT },
+			{ role: "developer", content: '{"type": "plan", "plan": "I will call getWeatherDetails for Delhi"}',
+			{ role: 'user', content: user },
+		],
+	});
+	console.log(result.choices[0].message.content);
+}
+
+
+chat1();
+
+async function chat2() {
+	const result = await client.chat.completions.create( {
+		model: 'gpt-4',
+		messages: [
+			{ role: "system", content: SYSTEM_PROMPT },
+			{ role: "developer", content: '{"type": "action", "function": "getWeatherDetails", "input":"Delhi"}',
+			{ role: 'user', content: user },
+		],
+	});
+	console.log(result.choices[0].message.content);
+}
+
+chat2();
+
+const messages = [{ role: 'system', content: SYSTEM_PROMPT }];
+
+while(true) {
+	const query = readlineSync.question('>> ');
+	const q = {
+		type: 'user',
+		user: query,
+	};
+	messages.push({ "role": "user", content: JSON.stringify(q) })
+	
+	while (true) {
+		const chat = await client.chat.completions.create({
+			model: 'gpt-4',
+			messages: messages,
+			response_format: { type: 'json_object' },
+		});
+		
+		const result = chat.choices[0].message.content;
+		messages.push( { role: 'assistant', content: result });
+		
+		console.log(`\n\n--------------- START AI -------------`);
+		console.log(result);
+		console.log(`--------------- END AI -------------\n\n`);
+		
+		const call = JSON.parse(result)
+		
+		if (call.type == "output") {
+			console.log(`: ${call.output}`);
+			break;
+		} else if (call.type == 'action'){
+			const fn = tools[call.function]
+			const observation = fn(call.input)
+			const obs = {"type": "observation", "observation": observation}
+			messages.push( { role: "developer", content: JSON.stringify(obs) })
+		}
+	}
+}
+
+Agentic Frameworks for complex and scalabale AI agents:
+Example: Langraph, etc
+
