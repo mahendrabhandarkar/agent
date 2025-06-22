@@ -35,4 +35,5 @@ https://codeassist.google/ --- Gemini Code Assist for individuals at no cost,
 https://github.com/comet-ml/opik - Opik -- Open source LLM evaluation framework -- Debug, evaluate, and monitor your LLM applications, RAG systems, and agentic workflows with comprehensive tracing, automated evaluations, and production-ready dashboards. <br />
 https://github.com/Horizon733/ai-resume-analyzer/tree/master -- Simple LLM --- Created by friend<br />
 https://vaadin.com/blog/advanced-rag-techniques-with-spring-ai --- Advanced RAG techniques with Spring AI --- <br />
-
+https://www.youtube.com/watch?v=lWJ5eY8C3IU --- This is how I run my OWN Custom-Models using OLLAMA --- <br />
+ 
