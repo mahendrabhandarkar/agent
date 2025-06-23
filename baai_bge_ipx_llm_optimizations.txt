@@ -1,0 +1,43 @@
+When used with libraries like LangChain or LlamaIndex, they can be downloaded and stored locally, which is useful for offline or faster access. 
+How to use BGE models stored locally:
+1. Download the model:
+When you first use a BGE model with a library like LangChain or Transformers, it will be automatically downloaded from the Hugging Face Model Hub and stored in a local cache. The default cache location is usually ~/.cache/huggingface/hub. 
+2. Load the model locally:
+After the initial download, you can load the model directly from the cache or from a specified local path. 
+3. Using with LangChain:
+In LangChain, you can use the IpexLLMBgeEmbeddings wrapper, which provides optimizations for Intel CPUs and GPUs, to load and use the BGE model. You can specify the model name (e.g., "BAAI/bge-small-en-v1.5") and a path to store the model. 
+4. Using with LlamaIndex:
+LlamaIndex also allows you to specify a local path for the embedding model. You can download the model and tokenizer separately and then load them using AutoModel.from_pretrained() from the transformers library. 
+5. Storing the model:
+You can also explicitly specify a path to store the model using the sentence_transformers library. 
+
+Example (using LangChain with ipex-llm):
+
+from langchain_community.embeddings import IpexLLMBgeEmbeddings
+from transformers import AutoModel, AutoTokenizer
+from pathlib import Path
+
+# Model name and path for storing the model
+model_name = "BAAI/bge-small-en-v1.5"
+model_path = "./bge-model"
+
+# Initialize the embedding model
+model_kwargs = {"device": "cpu"}  # Specify device if needed
+encode_kwargs = {"normalize_embeddings": True}
+embeddings = IpexLLMBgeEmbeddings(
+    model_name=model_name,
+    model_path=model_path,
+    model_kwargs=model_kwargs,
+    encode_kwargs=encode_kwargs,
+)
+
+# Example usage (embedding a text)
+text = "This is a sample sentence."
+embedding = embeddings.embed_query(text)
+print(embedding[:5])  # Print the first 5 elements of the embedding vector
+
+Key points:
+BGE models are powerful embedding models for various tasks, including semantic similarity and retrieval. 
+You can download and store them locally for faster access and offline use. 
+Libraries like LangChain and LlamaIndex simplify the process of loading and using BGE models locally. 
+Consider using the ipex-llm optimizations for Intel CPUs and GPUs when working with LangChain. 
