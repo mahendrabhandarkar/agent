@@ -1,3 +1,5 @@
+BGE, IPHY -- model stored locally.  BGE (BAAI General Embedding) models, like BAAI/bge-small-en-v1.5 or BAAI/bge-base-en-v1.5, are text embedding models developed by the Beijing Academy of Artificial Intelligence (BAAI). Consider using the ipex-llm optimizations for Intel CPUs and GPUs when working with LangChain.
+
 When used with libraries like LangChain or LlamaIndex, they can be downloaded and stored locally, which is useful for offline or faster access. 
 How to use BGE models stored locally:
 1. Download the model:
