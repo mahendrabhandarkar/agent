@@ -1,0 +1,266 @@
+https://www.youtube.com/watch?v=p0FERNkpyHE --- Introducing RAG 2.0: Agentic RAG + Knowledge Graphs (FREE Template)
+
+Attention is all you need --- youtube video --- 
+What is an AI Agent --- youtube video --- 
+
+http://aka.ms/agentcon/discord
+
+Agentic RAG, Agent AI, AI
+Agent -- Automation Workflows
+Azure AI Foundary
+Bot -> cloud -> low code -> power platforms -> PVA [Power Virtual Agents] --> Copilot Studio
+TFS - VSTS -> VSTS Online -> Azure DevOps
+Automate the things which are not possible earliers -- Less Human Intervations
+Always an Orachaestration where human in loop
+Service Now Incidients
+SAP allows integrations with all agents.
+A2A protocol 
+
+MCP - Model Context Protocol -- USB for agents -- 
+MCP Servers -- 
+Github MCP Servers ---
+Google Search MCP Servers ---
+
+Agentic AI uses MCP protocol for implementation.
+MCP we use JSON RBC
+HTTP 
+MCP has no JWT token but 
+
+
+Agent AI for begineers -- on github -- 10 minute videos
+Datastructure learning needed or not 
+
+Model returns score which gives output. How we get scores in model.
+
+How deepseek AI agent is differs in google gemini agent.? And what makes it supper useful.
+
+contentstack -- CMS -- personalized recommendation.
+
+Bring your own agents:
+-----------------------
+smolaagents, langchain, crewai, mastra -- stacks used for developing agents using python
+Agents has tools
+tools are code written somehere perform operations
+Problem of Traceablity
+Anthropic --- 
+Why should developer focusing on maintaining the context, should model should define context
+Model Context Protocol -- MCP --- Avoid DDOS attack and traceability
+MCP Server tool -- write code which shows add mentioned that use calculator
+
+from mcp import MCPServer
+server = MCPServer()
+
+server.tool("calculate")
+def calculate(operation: str, a: float, b: float):operation=="add":
+	return a+  b
+	....
+	
+	
+config file and connect it with LLM
+MCP started to halucinate after 40 prompts
+How you will manage when have multiple agent and MCP Server --- Solution: Orachaestration
+Orchestrator was biasing itself to use some or other agent
+why are we having static workflows
+A2A (Agent to Agent Protocol)
+A2A is all we have to take care of your agents. like similar MCP does for functions.
+It helps for scalable, Monitoring and Reusable
+
+RAGA framework --- RAGAs --- https://www.youtube.com/watch?v=J3M95E0LQl8
+noise sensitivity
+context reletaivity
+
+imaging simple arthimetic agent
+Would you want to have LLM like chatgpt
+When we create an agent, we have to specify what tasks it will work.
+
+Ollama --- LLM is just piece of code
+Best ways to optimize for context --- agentic AI --- 
+IVEFEQ (IVF with PQ) vector index --- Hierarchical Navigational Small world [HNSW]. https://www.youtube.com/watch?v=chz74Mtd1AA
+IN Agent we have relevance, these rules are used to define. In agent we have LLM. MCP and A2A both has LLM.
+
+Agent has caching memory.
+KVCache -- Knowledge World Cache --- https://www.youtube.com/watch?v=jk2FsJxZFo8
+threshold above 4 -- it gives same answer.
+
+How to implement privacy of data --- 
+Knowledge Graph --- We can use Knowledge Graph -- chunk to data connected to another chunk. Neo4J, etc
+
+mcp_a2a_attempt_1
+python contextstack.py
+
+pip
+uv -- package written in rust -- to install python dependency --- https://www.youtube.com/watch?v=JeiCxJP7IK4
+
+Agent card --- extracted by A2A. We need to add it in A2A interface.
+
+Short Memory and Long Memory Concepts in A2A --- https://www.youtube.com/watch?v=6qXcIaSS-kg
+
+fallback mechanism in A2A [Agent to Agent Protocol] -- https://www.youtube.com/watch?v=LUpe9SFocng&t=148s
+
+We have jail break prompt. It will not consider harmful things like delete, etc.
+
+MCP Server --- https://www.youtube.com/shorts/NSNaZNRxUmg
+MCP client code ---https://www.youtube.com/shorts/exnKRvwn9hI
+
+-------------------------------------------------------------------------------------------------------------------------------------
+Supercharge your AI Agent with MCP
+-----------------------------------
+Model Context Protocol [MCP]
+
+https://www.youtube.com/watch?v=Jn4OKejPfnA&list=PLo80fWiInSIMJYcPryVHDWATN-uhcJBxa
+
+LLM, Prompt -- Problem start when we have asked questions about out of context data.
+
+RAG -- Used for my organization with LLM
+
+Vector database and Embeeding Model
+
+Typical AI Application with Current AI Applications
+
+MCP - Standardizes how LLM interact with different tools, database, etc
+
+General Archtecture 
+MCP Client CI.
+
+Core Concepts
+- MCP Hosts - Program like Claude Desktop, Visual Studio Code, IDEs or AI tools that want to access data through MCP.
+- MCP CLients -- Protol client that maintain 1:1 connections with servers.
+- MCP Servers -- lightweight programs that each expose specific capabilities through the standardized MCP.
+
+Short Term Memory -- 
+Long Term Memory -- Vector database
+
+First discovery MCP and do this task then it will send request to capaibility it has and will get response.
+
+https://github.com/modelcontextprotocol/servers.git
+
+https://github.com/modelcontextprotocol/java-sdk
+
+It will search both servers and return the result. We will decide response based on workflow.
+
+goibobo --- uses MCP architecure. 
+
+Claude Desktop Version ----- https://claude.ai/download
+
+Zerodha MCP Server -- https://zerodha.com/z-connect/featured/connect-your-zerodha-account-to-ai-assistants-with-kite-mcp
+https://www.youtube.com/watch?v=dA6IgCdg6tE
+
+Content Safety featured -- define temperature and check threat
+Create System prompt which gives response for questions related to your organization.
+
+File System MCP Server ---
+LLM - to save token cost its implement caching system -- Caching layer to reduce the cost.
+
+Swipe Coding -- 
+
+SBC Server -- Session Border Controller (SBC) is a network element that sits at the edge of a network, primarily used in VoIP and unified communications (UC) environments. It acts as a security gateway, mediating communication between different networks and ensuring secure, reliable, and high-quality voice and video sessions.
+------------------------------------------------------------------------------------------------------------------------------------
+Best practices -- Giving the data lack, Locally build MCP server ---  
+
+
+AI model for unstructured data --- Like Videos, Image, etc.
+
+Claude Desktop - Is used for MCP servers to test. ---- 
+
+How our data will be safe --- Twilio Calling server [it uses Auth0], Some uses API Key [Key, Value] pair.
+Mult-Factor Authentication.
+
+As we are building MCP server on local so no need to develop authentication.
+
+LM Studio --- alternative of ollama tool. We can use it to run model locally. --- https://lmstudio.ai/
+
+Open Router - give you capabilities to connect multiple model at a time. --- https://openrouter.ai/
+
+opencv/opencv: Open Source Computer Vision Library
+
+--------------------------------------------------------------------------------------------------------------------------------------
+Build agents in Copilot Studio for Insurance
+
+Journey to the Frontier Firm
+-------------------------------
+Retrieval --- Information --- 
+Perform Task --- Tasks and action
+Autonomous --- Approve or Reject Agent
+
+Policy Issuance -- can be easily done by automation.
+Claims Traiging - JIRA Tasks --- All checks are passed but human is approved. Human can just review.
+
+Transformng Enterprise Business Processes with MCS -- Github Copilot
+Invoice Processing Agents
+HR Agent
+Sales Agent --- CRM Microsoft Dynamics -- Copilot --- Linked it about Teams
+
+Spectrum of Agents
+
+A2A protocol -- Team of agents to do specific tasks
+
+Why Copilot Studio for Insurance
+---------------------------------
+1. Reduce Support load 
+	- Streamline clain handling
+	- Asnwers policy questions 24*7
+	- Reduce
+	
+Retreval Agent
+Task Based Agent
+
+Copilot Studio
+--- We have 2 agent
+	--- Claim Insurer --- 
+	--- Policy Agent --- 
+	--- Multi-Agent 
+	
+Low Code no code platforms
+--- http://copilotstudio.microsoft.com
+
+Agent Orchastration --- Multiple agent and autonomous agent
+
+Responsible AI Principle:
+Content Moderaion Level: 
+
+Multi-Model is used for Image, Video and Text processing.
+
+text embedding model --- Unstructured, blog data, etc.
+
+---------------------------------------------------------------------------------------------------------------------------------------------
+Agent Architects
+-----------------
+What would be the first thing you'd teach a newly-created AI if you had the chance?
+
+Agent Architects:
+Building Smarter Brains, One Demo at the time.
+
+What is an Agent?
+A piece of code that is able to executes 1 or more defined tasks
+
+Language Model -- Travel is the only thing that buy, that makes you richer.
+
+Single Agent					Multi Agent
+- LLM call						-
+- tools							-
+-- Tool call					-
+-- React agent					-
+
+langchain lamda ---- for AWS
+
+Langchain vs LIamaIndex vs Swarm - Which is best and which will cost less? --- https://www.youtube.com/watch?v=IPLh11OvftE --- https://www.youtube.com/watch?v=RK5rRR78fSA
+
+Routing / Supervisor --- Everything will be focus on agent itself.
+
+Reflection ---- 
+
+Parallelism ----
+
+Swarm ---
+
+Planner ---
+
+https://github.com/sammydeprez/agent_architectures.git --- Get Python code in this repository of all above processes.
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+develop ai agent using azure ai ---- https://www.youtube.com/watch?v=mnfNZmKtZ-4
+
+LEARN DEVELOPING AI AGENT:
+----------------------------
+OOPs in Python:
+
