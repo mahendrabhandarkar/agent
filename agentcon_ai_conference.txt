@@ -262,5 +262,7 @@ develop ai agent using azure ai ---- https://www.youtube.com/watch?v=mnfNZmKtZ-4
 
 LEARN DEVELOPING AI AGENT:
 ----------------------------
-OOPs in Python:
+OOPs in Python: by CampusX --- https://www.youtube.com/watch?v=Mf2RdpEiXjU
+Fine Tunning with pytorch: by Sunny Sunita --- https://www.youtube.com/watch?v=SPNaP4ik9a4
+
 
