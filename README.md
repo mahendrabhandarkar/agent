@@ -36,4 +36,4 @@ https://github.com/comet-ml/opik - Opik -- Open source LLM evaluation framework 
 https://github.com/Horizon733/ai-resume-analyzer/tree/master -- Simple LLM --- Created by friend<br />
 https://vaadin.com/blog/advanced-rag-techniques-with-spring-ai --- Advanced RAG techniques with Spring AI --- <br />
 https://www.youtube.com/watch?v=lWJ5eY8C3IU --- This is how I run my OWN Custom-Models using OLLAMA --- <br />
- 
+chanakya.ttf font we need to use for traversing file: <br />
