@@ -37,3 +37,7 @@ https://github.com/Horizon733/ai-resume-analyzer/tree/master -- Simple LLM --- C
 https://vaadin.com/blog/advanced-rag-techniques-with-spring-ai --- Advanced RAG techniques with Spring AI --- <br />
 https://www.youtube.com/watch?v=lWJ5eY8C3IU --- This is how I run my OWN Custom-Models using OLLAMA --- <br />
 chanakya.ttf font we need to use for traversing file: <br />
+https://huggingface.co/  --- ML
+https://youtube.com/playlist?list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&si=ShT7TMaGuVNEzAdP  --- neural network and llms
+
+
