@@ -38,6 +38,6 @@ https://vaadin.com/blog/advanced-rag-techniques-with-spring-ai --- Advanced RAG 
 https://www.youtube.com/watch?v=lWJ5eY8C3IU --- This is how I run my OWN Custom-Models using OLLAMA --- <br />
 chanakya.ttf font we need to use for traversing file: <br />
 https://huggingface.co/  --- ML
-https://youtube.com/playlist?list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&si=ShT7TMaGuVNEzAdP  --- neural network and llms
-
+https://youtube.com/playlist?list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&si=ShT7TMaGuVNEzAdP  --- neural network and llms <br />
+Facebook AI Similarity Search (FAISS) is a library for efficient similarity search and clustering of dense vectors. FAISS index built and saved to /content/bge_index.faiss with 837377 vectors. Getting closer to 1Mn vectors. <br />
 
