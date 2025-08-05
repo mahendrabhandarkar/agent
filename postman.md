@@ -11,3 +11,7 @@ podman exec -it ollama-server bash <br />
 ollama pull llama3 <br />
 OLLAMA_NO_AUTH=1 ollama run llama3 <br />
 
+podman machine start ollama_machine
+podman ps
+"C:\Program Files\Redhat\Podman\podman.exe" build -t ksfinalb:latest .
+podman run -p 8080:9191 ksfinalb
