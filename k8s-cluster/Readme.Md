@@ -36,7 +36,7 @@ cp /mnt/c/mahendra/agent/k8s-cluster/id_rsa.pub .
 podman exec -it master bash
 mkdir -p /root/.ssh
 echo "ssh-rsa AAAA... user@host" >> /root/.ssh/authorized_keys
-# echo "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIITax4diUU4ha+uUoLFK8U3yRw/qDT9FRJgZHpTUehLI root@L-INE-2NM8V93" >> /root/.ssh/authorized_keys
+#echo "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIITax4diUU4ha+uUoLFK8U3yRw/qDT9FRJgZHpTUehLI root@L-INE-2NM8V93" >> /root/.ssh/authorized_keys
 chmod 700 /root/.ssh
 chmod 600 /root/.ssh/authorized_keys
 exit
@@ -67,3 +67,6 @@ sudo swapoff -a
 # delete old save key
 #sudo apt-key list
 #sudo apt-key del F6EC B376 2474 EDA9 D21B  7022 8719 20D1 991B C93C
+
+rm -f /etc/apt/keyrings/kubernetes-apt-keyring.gpg
+ansible-playbook -i inventory.ini playbook.yml
