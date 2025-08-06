@@ -1,0 +1,21 @@
+---
+- name: Kubernetes Cluster Setup using Podman
+  hosts: kubernetes
+  become: true # tell Ansible to use sudo (become) for that task 
+  gather_facts: yes
+  pre_tasks:
+    - name: Remove malformed Kubernetes APT source if it exists
+      file:
+        path: /etc/apt/sources.list.d/kubernetes.list
+        state: absent
+
+  roles:
+    - common
+    - kubernetes
+
+- name: Join Worker Nodes to Cluster
+  hosts: workers
+  become: true
+  gather_facts: false
+  roles:
+    - join

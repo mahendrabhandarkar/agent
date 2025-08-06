@@ -1,0 +1,134 @@
+---
+- name: Detect if systemd is running
+  stat:
+    path: /run/systemd/system
+  register: systemd_dir
+
+- name: Remove old Kubernetes repo if present
+  file:
+    path: /etc/apt/sources.list.d/kubernetes.list
+    state: absent
+
+- name: Ensure APT keyrings directory exists
+  file:
+    path: /etc/apt/keyrings
+    state: directory
+    mode: '0755'
+
+- name: Download Kubernetes ASCII GPG key directly
+  get_url:
+    url: https://pkgs.k8s.io/core:/stable:/v1.29/deb/Release.key
+    dest: /etc/apt/keyrings/kubernetes-apt-keyring.key
+    mode: '0644'
+
+- name: Add Kubernetes APT repository using ASCII key
+  copy:
+    dest: /etc/apt/sources.list.d/kubernetes.list
+    content: |
+      deb [signed-by=/etc/apt/keyrings/kubernetes-apt-keyring.key] https://pkgs.k8s.io/core:/stable:/v1.29/deb/ /
+    mode: '0644'
+
+- name: Update apt cache
+  apt:
+    update_cache: yes
+
+- name: Install Kubernetes components (v1.29)
+  apt:
+    name:
+      - kubelet
+      - kubeadm
+      - kubectl
+    state: present
+    update_cache: yes
+
+- name: Hold Kubernetes packages to prevent unintended upgrades
+  dpkg_selections:
+    name: "{{ item }}"
+    selection: hold
+  loop:
+    - kubelet
+    - kubeadm
+    - kubectl
+
+- name: Reload systemd daemon
+  command: systemctl daemon-reload
+  become: yes
+  when: systemd_dir.stat.exists
+
+- name: Wait for kubelet service file to be available
+  wait_for:
+    path: /lib/systemd/system/kubelet.service
+    timeout: 30
+  when: systemd_dir.stat.exists
+
+- name: Check if kubelet binary exists
+  stat:
+    path: /usr/bin/kubelet
+  register: kubelet_bin
+
+- name: Debug kubelet service status before starting
+  command: systemctl status kubelet
+  register: kubelet_status
+  ignore_errors: yes
+  when: systemd_dir.stat.exists
+
+- debug:
+    var: kubelet_status.stdout_lines
+  when: systemd_dir.stat.exists
+
+- name: Enable and start kubelet service
+  systemd:
+    name: kubelet
+    enabled: yes
+    state: started
+  when: systemd_dir.stat.exists and kubelet_bin.stat.exists
+
+- name: Configure kubelet to use Podman
+  copy:
+    dest: /etc/default/kubelet
+    content: |
+      KUBELET_EXTRA_ARGS=--container-runtime=remote --container-runtime-endpoint=unix:///run/podman/podman.sock
+
+- name: Enable and start podman.socket
+  systemd:
+    name: podman.socket
+    enabled: true
+    state: started
+  when: systemd_dir.stat.exists
+
+- name: Initialize Kubernetes master node
+  command: kubeadm init --pod-network-cidr=10.244.0.0/16 --cri-socket=unix:///run/podman/podman.sock
+  when: inventory_hostname in groups['masters']
+  register: kubeadm_init_output
+  changed_when: "'kubeadm join' in kubeadm_init_output.stdout"
+
+- name: Extract join command from kubeadm output
+  set_fact:
+    join_command: "{{ kubeadm_init_output.stdout_lines | select('search', 'kubeadm join') | list | join(' ') }}"
+  when: inventory_hostname in groups['masters']
+
+- name: Create .kube directory for root
+  file:
+    path: /root/.kube
+    state: directory
+    mode: '0700'
+  when: inventory_hostname in groups['masters']
+
+- name: Copy Kubernetes admin config
+  copy:
+    src: /etc/kubernetes/admin.conf
+    dest: /root/.kube/config
+    remote_src: yes
+  when: inventory_hostname in groups['masters']
+
+- name: Install Flannel CNI from master
+  shell: |
+    kubectl apply -f https://raw.githubusercontent.com/coreos/flannel/master/Documentation/kube-flannel.yml
+  when: inventory_hostname in groups['masters']
+
+- name: Save kubeadm join command to file for worker nodes
+  copy:
+    dest: /tmp/join_command.sh
+    content: |
+      {{ join_command }}
+  when: inventory_hostname in groups['masters']

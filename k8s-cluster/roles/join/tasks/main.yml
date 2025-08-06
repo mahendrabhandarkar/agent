@@ -1,0 +1,14 @@
+---
+- name: Wait for master to generate join command
+  pause:
+    seconds: 30
+
+- name: Fetch join command from master
+  shell: cat /tmp/join_command.sh
+  delegate_to: "{{ groups['masters'][0] }}"
+  register: join_cmd
+
+- name: Join the cluster
+  shell: "{{ join_cmd.stdout }} --cri-socket=unix:///run/podman/podman.sock"
+  args:
+    creates: /etc/kubernetes/kubelet.conf

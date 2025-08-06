@@ -1,0 +1,22 @@
+---
+- name: Install dependencies
+  apt:
+    name:
+      - apt-transport-https
+      - ca-certificates
+      - curl
+      - gnupg
+      - lsb-release
+    update_cache: yes
+    state: present
+
+- name: Disable swap
+  command: swapoff -a
+  become: true # tell Ansible to use sudo (become) for that task 
+  when: ansible_swaptotal_mb > 0
+
+- name: Remove swap entry from fstab
+  replace:
+    path: /etc/fstab
+    regexp: '^\s*([^#\n]+\s+){2}swap\s+'
+    replace: '# \1'
