@@ -1,3 +1,5 @@
+#https://www.youtube.com/watch?v=Vri-dT9AbfI&t=62s --- Using the KIND (Kubernetes in Docker) extension in Podman Desktop for local Kubernetes deployment -- Kind is an opensource project that allow you to run kubernetes cluster inside of a container engine, this could be podman, docker or others. this is quite helpful for development and testing purposes. As well as running kubernetes locally in lightweight fashion with that being said if you are using podman on windows let's go head and configure a podman machine the virtual machine to run this workload. To create machine: Once in podman desktop, Create a podman machine, go to settings and Resources. Then Create Kind Cluster. https://kubernetes.io/docs/tutorials/stateless-application/guestbook/
+
 wsl --install <br />
 "C:\Program Files\Redhat\Podman\podman.exe" machine init ollama_machine <br />
 podman machine start ollama_machine <br />
