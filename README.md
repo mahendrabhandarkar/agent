@@ -41,3 +41,4 @@ https://huggingface.co/  --- ML
 https://youtube.com/playlist?list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&si=ShT7TMaGuVNEzAdP  --- neural network and llms <br />
 Facebook AI Similarity Search (FAISS) is a library for efficient similarity search and clustering of dense vectors. FAISS index built and saved to /content/bge_index.faiss with 837377 vectors. Getting closer to 1Mn vectors. <br />
 JEPA [Joint Embedding Predictive Architecture] framework - <br />
+Train Word Embeddings with Word2Vec in python from Scratch --- <br />
