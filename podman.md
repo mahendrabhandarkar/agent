@@ -17,3 +17,10 @@ podman machine start ollama_machine
 podman ps
 "C:\Program Files\Redhat\Podman\podman.exe" build -t ksfinalb:latest .
 podman run -p 8080:9191 ksfinalb
+
+#kibana, elasticsearch, logstash, prometheus grafana node_exporter alertmanager, portainer - in podman
+docker-compose -f elk_installation_podman.yml down -v
+del .env
+elk_automation.bat
+podman exec -it elasticsearch /bin/bash
+bin/elasticsearch-reset-password -u kibana_system -i  # set password to changeme then restart kibana.
