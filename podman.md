@@ -45,3 +45,9 @@ bin/elasticsearch-reset-password -u kibana_system -i  # set password to changeme
 docker-compose -f environment_related_services.yml down -v
 
 #kubernetes native - envoy-master, envoy-client, metalb,
+
+#devsecops -- SonarQube, OWASP ZAP, DefectDojo, MySQL, Gitleaks	, Semgrep, Checkov, Trivy	, Hadolint, Nuclei, etc.
+docker-compose -f devsecops_docker_compose.yml down --volumes
+docker image prune -af
+docker-compose -f devsecops_docker_compose.yml pull
+docker-compose -f devsecops_docker_compose.yml up -d
