@@ -1,0 +1,89 @@
+services:
+  sonarqube:
+    image: sonarqube:latest
+    container_name: sonarqube
+    ports:
+      - "9000:9000"
+    environment:
+      - SONAR_ES_BOOTSTRAP_CHECKS_DISABLE=true
+    volumes:
+      - sonarqube_data:/opt/sonarqube/data
+      - sonarqube_extensions:/opt/sonarqube/extensions
+    networks:
+      - devsecops-net
+
+  zap:
+    image: ghcr.io/zaproxy/zaproxy:stable
+    container_name: zap
+    ports:
+      - "8081:8081"
+    networks:
+      - devsecops-net
+    command: zap.sh -daemon -port 8081 -host 0.0.0.0 -config api.disablekey=true -config api.addrs.addr.name=.* -config api.addrs.addr.regex=true
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8081"]
+      interval: 30s
+      timeout: 10s
+      retries: 5
+
+  vault:
+    image: hashicorp/vault:1.15.0
+    container_name: vault
+    ports:
+      - "8200:8200"
+    cap_add:
+      - IPC_LOCK
+    environment:
+      VAULT_DEV_ROOT_TOKEN_ID: root
+      VAULT_DEV_LISTEN_ADDRESS: "0.0.0.0:8200"
+    command: server -dev
+    networks:
+      - devsecops-net
+
+  postgres:
+    image: postgres:13
+    container_name: dojo-postgres
+    environment:
+      POSTGRES_DB: defectdojo
+      POSTGRES_USER: defectdojo
+      POSTGRES_PASSWORD: defectdojo
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+    networks:
+      - devsecops-net
+
+  dojo:
+    image: defectdojo/defectdojo-django:latest
+    container_name: defectdojo
+    depends_on:
+      - postgres
+    environment:
+      DD_DATABASE_ENGINE: django.db.backends.postgresql
+      DD_DATABASE_HOST: dojo-postgres
+      DD_DATABASE_PORT: 5432
+      DD_DATABASE_NAME: defectdojo
+      DD_DATABASE_USER: defectdojo
+      DD_DATABASE_PASSWORD: defectdojo
+      DD_ADMIN_USER: admin
+      DD_ADMIN_PASSWORD: admin
+      DD_ADMIN_FIRST_NAME: Admin
+      DD_ADMIN_LAST_NAME: User
+      DD_ADMIN_EMAIL: admin@dojo.local
+      DD_SECRET_KEY: supersecretkey1234567890  # Replace with a secure value
+    ports:
+      - "8080:8081"
+    networks:
+      - devsecops-net
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8080/login"]
+      interval: 30s
+      timeout: 10s
+      retries: 5
+      
+volumes:
+  sonarqube_data:
+  sonarqube_extensions:
+  pgdata:
+
+networks:
+  devsecops-net:
