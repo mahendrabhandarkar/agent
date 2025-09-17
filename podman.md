@@ -16,6 +16,7 @@ OLLAMA_NO_AUTH=1 ollama run llama3 <br />
 podman machine start ollama_machine <br />
 podman ps <br />
 "C:\Program Files\Redhat\Podman\podman.exe" build -t ksfinalb:latest Dockerfile .  ----or---- podman buildx build . <br />
+podman build --file server.Dockerfile --tag our-first-server <br />
 podman run -p 8080:9191 ksfinalb
 
 #kibana, elasticsearch, logstash, prometheus grafana node_exporter alertmanager, portainer - in podman
