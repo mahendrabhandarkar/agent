@@ -23,6 +23,17 @@ podman run --rm --entrypoint sh --volume /tmp/container:/tmp ubuntu -c "echo 'He
 podman login <br /> --- to login into docker hub <br />
 podman tag ourlocalimagename ourusername/imagenamewanttoshownindockerhub:R0.0.1 <br />
 podman push ourusername/imagenamewanttoshownindockerhub:R0.0.1 <br />
+podman run --name=alpine --entrypoint=sleep -d alpline infinity 
+podman stats alpline
+podman exec -i -t alpline sh 
+podman top alpline
+podman inspect alpline | less
+podman context ls
+podman context use default
+echo $env:DOCKER_CONTEXT ; echo $env:DOCKER_HOST;
+export DOCKER_CONTEXT=context_not_working
+unset DOCKER_CONTEXT
+
 #kibana, elasticsearch, logstash, prometheus grafana node_exporter alertmanager, portainer - in podman
 docker-compose -f elk_installation_podman.yml down -v
 del .env
