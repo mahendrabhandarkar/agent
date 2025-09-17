@@ -20,7 +20,9 @@ podman build --file server.Dockerfile --tag our-first-server . <br />
 podman ps -aq | xargs docker rm --- shows all ID, and now we deleted all containers. <br />
 podman run -p 8080:9191 ksfinalb <br />
 podman run --rm --entrypoint sh --volume /tmp/container:/tmp ubuntu -c "echo 'Hello there.' > /tmp/file & cat /tmp/file" -- create file and bind it with volume with /tmp your directory. <br />
-
+podman login <br /> --- to login into docker hub <br />
+podman tag ourlocalimagename ourusername/imagenamewanttoshownindockerhub:R0.0.1 <br />
+podman push ourusername/imagenamewanttoshownindockerhub:R0.0.1 <br />
 #kibana, elasticsearch, logstash, prometheus grafana node_exporter alertmanager, portainer - in podman
 docker-compose -f elk_installation_podman.yml down -v
 del .env
