@@ -164,3 +164,81 @@ goo.gle/clouddevs
 
 graphacademy.neo4j.com -- do certifications
 
+--------------------------------------------------------------------
+
+RDBMS useful for Transactional data
+Index Primary Key
+Key Value Pair
+Relationship 
+
+POlygraph -- Polygot
+
+Encode the relationship between different datasets
+
+Graph database is not picked up. It's not that easy for work for organization
+Diffcult to adopt
+Amazon Naptune, RangoDB, 
+RelationShip are structured
+
+Multi-modal data is not easily stored in relationship and entity
+Node has properties
+
+Setting up the relationship in different datasets.
+DataLake s norm in most data engineering team.
+AI engineering is become 
+
+Graph datasense / algorithm --- AI stuffs
+Neptune -- OpenCypher ---
+Vendor Lockin
+Traffic Routing formats ---
+
+Download ENv file template
+
+neo4j.com
+
+{ -- Representation of Entity
+Here User is label -- its an entity or node
+CREATE {u:User {name:"Prason", phoneno:"9890385168", emailid:"mahendra@gmail.com"}}
+RETURN u
+
+CREATE {p:Product {name:"MacbookAir", brand:"Apple", center:"Andheri"}}
+RETURN p
+
+MATCH {n}
+RETURN N
+
+Directions -- Left to right or right to left
+
+MATCH {u:User { name:"Prason" }}
+MATCH (p:Product {name="Macbook Air"})
+CREATE {u}-[r:HAS_BOUGHT]->(p)
+RETURN u,r,p
+
+SET command use
+delete command use
+using java function
+
+
+Claude Desktop / Github Copilot
+
+MCP Neo4J -- MCP Configuration -- UVX python package -- Sonet4 LLM
+
+Lets establish has bought relationship abhishek and macbook pro?
+
+Write me a simple python app - Create a python app to print list of user to know the DB.
+
+Guardrails need to be added on 
+
+To fraud detection, we can use it. -- 
+Outage thread detection: Fire detection and response -- 
+Threat response using a knowldge graph --- 
+Google Knowledge Graph 
+Semantic Relationships
+RBAC and policies
+Join the graph Academy
+Free Certifications
+graphacademy.neo4j.com
+Neo4J monthly contest
+dev.neo4j.com/
+Nodes 25 --- conference in november -- 
+Connect with LinkedIn - Sourcing Express
