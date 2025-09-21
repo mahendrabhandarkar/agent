@@ -43,6 +43,6 @@ https://youtube.com/playlist?list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&si=ShT7TMaG
 Facebook AI Similarity Search (FAISS) is a library for efficient similarity search and clustering of dense vectors. FAISS index built and saved to /content/bge_index.faiss with 837377 vectors. Getting closer to 1Mn vectors. <br />
 https://www.youtube.com/watch?v=0YdpwSYMY6I ---- All Machine Learning Models Clearly Explained! <br />
 https://www.youtube.com/watch?v=fFgyOucIFuk ---- Feed Your OWN Documents to a Local Large Language Model! <br />
-
+Koboldcpp -- Run LLM Locally on PC ---  <br />
 JEPA [Joint Embedding Predictive Architecture] framework - <br />
 Train Word Embeddings with Word2Vec in python from Scratch --- <br />
