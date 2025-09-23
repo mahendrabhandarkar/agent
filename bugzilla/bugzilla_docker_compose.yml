@@ -1,0 +1,83 @@
+version: "3.8"
+
+services:
+  db:
+    image: postgres:13
+    container_name: bugzilla_postgres
+    environment:
+      POSTGRES_DB: bugzilla
+      POSTGRES_USER: bzuser
+      POSTGRES_PASSWORD: bzpass
+    volumes:
+      - ./pgdata:/var/lib/postgresql/data:z
+    restart: unless-stopped
+
+  pgadmin:
+    image: dpage/pgadmin4
+    container_name: bugzilla_pgadmin
+    environment:
+      PGADMIN_DEFAULT_EMAIL: admin@pg.local
+      PGADMIN_DEFAULT_PASSWORD: admin123
+    ports:
+      - "8081:80"
+    volumes:
+      - pgadmin-data:/var/lib/pgadmin
+    depends_on:
+      - db
+    restart: unless-stopped
+
+  bugzilla:
+    image: ubuntu:22.04
+    container_name: bugzilla_web
+    depends_on:
+      - db
+    ports:
+      - "8080:80"
+    volumes:
+      - ./bugzilla:/var/www/html/bugzilla:z
+      - ./extensions:/var/www/html/bugzilla/extensions:z
+      - ./checksetup_logs:/checksetup_logs:z
+    environment:
+      BUGZILLA_DB: Pg
+      BUGZILLA_DB_HOST: db
+      BUGZILLA_DB_NAME: bugzilla
+      BUGZILLA_DB_USER: bzuser
+      BUGZILLA_DB_PASS: bzpass
+      ADMIN_EMAIL: admin@example.com
+      ADMIN_PASSWORD: adminpass
+    command: >
+      bash -c "
+      apt-get update &&
+      DEBIAN_FRONTEND=noninteractive apt-get install -y \
+        apache2 libapache2-mod-perl2 libdbd-pg-perl \
+        postgresql-client git curl perl \
+        libtemplate-perl libdatetime-perl \
+        libgd-graph-perl libjson-perl libxml-simple-perl \
+        libmime-tools-perl build-essential libssl-dev &&
+
+      cd /var/www/html &&
+      if [ ! -f bugzilla/index.cgi ]; then
+        git clone https://github.com/bugzilla/bugzilla.git
+      fi &&
+
+      cd bugzilla &&
+
+      # Clone extensions if not present
+      [ -d extensions/Testopia ] || git clone https://github.com/bugzilla/extensions-Testopia.git extensions/Testopia &&
+      [ -d extensions/BayotBase ] || git clone https://github.com/bayoteers/BayotBase.git extensions/BayotBase &&
+      [ -d extensions/AgileTools ] || git clone https://github.com/bayoteers/AgileTools.git extensions/AgileTools &&
+
+      # Run checksetup.pl and log output
+      touch /checksetup_logs/checksetup.log &&
+      ./checksetup.pl --check-modules | tee -a /checksetup_logs/checksetup.log &&
+      ./checksetup.pl | tee -a /checksetup_logs/checksetup.log &&
+
+      # Start Apache
+      a2enmod perl cgi &&
+      service apache2 restart &&
+      tail -f /var/log/apache2/error.log
+      "
+    restart: unless-stopped
+
+volumes:
+  pgadmin-data:

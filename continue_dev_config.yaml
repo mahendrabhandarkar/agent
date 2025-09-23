@@ -1,0 +1,110 @@
+name: Local Assistant
+version: 1.0.0
+schema: v1
+models:
+  - name: Gemma 3 Latest
+    provider: ollama
+    model: gemma3:latest
+    parameter_size: 4.3B
+    quantization_level: Q4_K_M
+    roles:
+      - chat
+      - edit
+      - apply
+    apiBase: http://localhost:11434
+    extra_info:
+      modified_at: "2025-08-30T11:48:28.911486593Z"
+      size: 3338801804
+      digest: a2af6cc3eb7fa8be8504abaf9b04e88f17a119ec3f04a3addf55f92841195f5a
+      format: gguf
+      family: gemma3
+      families:
+        - gemma3
+
+  - name: Phi 3 Mini
+    provider: ollama
+    model: phi3:mini
+    parameter_size: 3.8B
+    quantization_level: Q4_0
+    roles:
+      - chat
+      - edit
+      - apply
+    apiBase: http://localhost:11434
+    extra_info:
+      modified_at: "2025-08-30T11:42:33.563594084Z"
+      size: 2176178913
+      digest: 4f222292793889a9a40a020799cfd28d53f3e01af25d48e06c5e708610fc47e9
+      format: gguf
+      family: phi3
+      families:
+        - phi3
+
+  - name: Llama 3 Latest
+    provider: ollama
+    model: llama3:latest
+    parameter_size: 8.0B
+    quantization_level: Q4_0
+    roles:
+      - chat
+      - edit
+      - apply
+    apiBase: http://localhost:11434
+    extra_info:
+      modified_at: "2025-08-04T09:03:24.374421412Z"
+      size: 4661224676
+      digest: 365c0bd3c000a25d28ddbf732fe1c6add414de7275464c4e4d1c3b5fcb5d8ad1
+      format: gguf
+      family: llama
+      families:
+        - llama
+
+  - name: Qwen 2.5 Coder 1.5B Base
+    provider: ollama
+    model: qwen2.5-coder:1.5b-base
+    parameter_size: 1.5B
+    quantization_level: Q4_K_M
+    roles:
+      - chat
+      - edit
+      - apply
+      - autocomplete
+    apiBase: http://localhost:11434
+    extra_info:
+      modified_at: "2025-08-30T12:06:19.095151761Z"
+      size: 986060385
+      digest: 02e0f2817a890a6de385d534465c04c5d0980abddc83615c09e79cee2c094446
+      format: gguf
+      family: qwen2
+      families:
+        - qwen2
+
+  - name: Nomic Embed
+    provider: ollama
+    model: nomic-embed-text:latest
+    roles:
+      - embed
+
+  # ... your existing ollama models ...
+  # MCP Server running on localhost:3000
+  - name: LLaMA 3.2 via MCP
+    provider: ollama
+    model: llama3.2
+    roles: [ chat, edit, apply ]
+    apiBase: http://localhost:3000
+    apiKey: ""
+    temperature: 0.7
+    # extra_info for your reference
+    extra_info:
+      backend: ollama
+      storage: postgresql
+      database_url: postgresql://user:password@localhost:5432/your_db
+
+context:
+  - provider: code
+  - provider: docs
+  - provider: diff
+  - provider: terminal
+  - provider: problems
+  - provider: folder
+  - provider: codebase
