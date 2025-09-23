@@ -49,5 +49,9 @@ docker-compose -f environment_related_services.yml down -v
 #devsecops -- SonarQube, OWASP ZAP, DefectDojo, MySQL, Gitleaks	, Semgrep, Checkov, Trivy	, Hadolint, Nuclei, etc.
 docker-compose -f devsecops_docker_compose.yml down --volumes
 docker image prune -af
+
+#bugzilla - defect, test management and agile management
+docker-compose -f bugzilla_docker_compose.yml up -d
+
 docker-compose -f devsecops_docker_compose.yml pull
 docker-compose -f devsecops_docker_compose.yml up -d
