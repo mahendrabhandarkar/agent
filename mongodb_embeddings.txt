@@ -153,6 +153,7 @@ Combine both visual and textual data in RAG pipelines to improve LLM responses.
 
 -----------------------------------------------------multimodel_mango,py--------------------------------------------------------------------------
 # partition_pdf is used to filter heading, pagenumber, etc from actual data.
+# https://github.com/Horizon733/multimodal-mongo.git
 
 import os
 
