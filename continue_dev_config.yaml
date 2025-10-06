@@ -85,6 +85,14 @@ models:
     roles:
       - embed
 
+# perplexity pro
+  - name: Perplexity
+    provider: openai
+    model: sonar-pro
+    apiBase: https://api.perplexity.ai
+    apiKey: "" 
+# insert <YOUR_API_KEY> key - Your Perplexity API key. Obtain a Perplexity Pro API key from your Perplexity AI account dashboard.
+
   # ... your existing ollama models ...
   # MCP Server running on localhost:3000
   - name: LLaMA 3.2 via MCP
