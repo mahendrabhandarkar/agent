@@ -16,6 +16,9 @@ Architecture of Model Customization Platform (MCP):
 - Prompt Templates → UX-friendly templates for consistent prompting
 TRANSPORT MECHANISMS of MCP:
 - STDIO
-- Streamable HTTP (SSE - Server Sentiments)
+- Streamable HTTP 
+- (SSE - Server Sentiments Events)
 Semantic Kernel (SK) is an open-source SDK by Microsoft that helps developers integrate AI models (like OpenAI’s GPT) into traditional applications using plugins, memory, and planner systems.
 MCP Inspector --- open source option of testing MCP servers -- https://github.com/modelcontextprotocol/inspector
+https://www.youtube.com/shorts/mxf1hp_N_1k -- New MCP Server Configuration in VS Code -- 
+https://www.youtube.com/watch?v=WwPEcvkK7po -- GitHub Copilot Agent + Figma MCP Server: AI-Powered UI Development Demo --- https://github.com/GLips/Figma-Context-MCP

@@ -108,6 +108,13 @@ models:
       storage: postgresql
       database_url: postgresql://user:password@localhost:5432/your_db
 
+ # 👉 Figma MCP Tool (loads from .continue/mcpServers/)
+  - name: Figma Design Context
+    provider: mcp
+    roles: [tool]
+    mcp:
+      uses: Figma HTML Converter  # Matches the name in figma-mcp.yaml
+      
 context:
   - provider: code
   - provider: docs

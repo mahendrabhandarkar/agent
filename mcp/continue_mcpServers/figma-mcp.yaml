@@ -1,0 +1,14 @@
+# .continue/mcpServers/figma-mcp.yaml
+name: Figma Context MCP
+version: 1.0.0
+schema: v1
+mcpServers:
+  - name: Figma HTML Converter
+    type: stdio
+    command: npx
+    args:
+      - figma-developer-mcp
+      - --figma-api-key=${FIGMA_API_KEY}
+      - --stdio
+    env:
+      FIGMA_API_KEY: YOUR_FIGMA_API_KEY
