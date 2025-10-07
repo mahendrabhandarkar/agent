@@ -1,0 +1,21 @@
+MCP Stands for Model Context Protocol
+Protocol: The rules for communication
+Model: Refers to AI models (e.g. GPT, Gemini)
+Context: The Subject or background information of something you give the LLM model - inputs
+Parts of MCP [Request --> MCP Host ---> LLM ---> MCP Client ---> MCP Server ]
+- Hosts --- example: VSCode --- LLM Modx  -- It has capabilty of hosting LLM Model.
+- Clients -- example: CO-pilot studio -- MCP client request to expose model data to MCP Server. MCP Client will get request of user.
+- Servers -- example: Dynamics 365 --- It exposes the available tools. Tools means API or any logic. MCP server expose you model data.
+MCP Core Primitives
+-- Tools @mcp.tool
+-- Resources  @mcp.resource
+-- Prompts @mcp.prompt
+Architecture of Model Customization Platform (MCP):
+- Tools → Functions your model can call
+- Resources → External data/models exposed for context
+- Prompt Templates → UX-friendly templates for consistent prompting
+TRANSPORT MECHANISMS of MCP:
+- STDIO
+- Streamable HTTP (SSE - Server Sentiments)
+Semantic Kernel (SK) is an open-source SDK by Microsoft that helps developers integrate AI models (like OpenAI’s GPT) into traditional applications using plugins, memory, and planner systems.
+MCP Inspector --- open source option of testing MCP servers -- https://github.com/modelcontextprotocol/inspector
