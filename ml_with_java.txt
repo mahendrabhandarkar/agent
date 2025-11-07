@@ -90,7 +90,8 @@ MOA: Designed for real-time data stream mining.
 Apache Spark MLlib: Provides scalable machine learning algorithms integrated with Spark’s big data framework.
 Smile: Offers a range of machine learning algorithms and statistical tools.
 
-
+Apache Tika is a content detection and analysis framework written in Java, highly useful in machine learning projects for pre-processing and feature extraction from diverse document types.
+Apache Lucene 
 Wrka
 Deepleaening4j
 MOA
