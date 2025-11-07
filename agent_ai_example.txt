@@ -1,3 +1,5 @@
+AIDLC - AI development life cycle.
+Vector Databases: pinecone, weaviate, Redis, etc
 LLM --- ChatGpt, etc --- Input --> LLM --> Output
 AI Workflows --- Give output based on access tools via LLM. Tool accessed decided by Human Decision Maker.
 AI Agents --- Critique Bot --- 
