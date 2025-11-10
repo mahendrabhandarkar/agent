@@ -1,5 +1,7 @@
 # version: '3.8'
-
+#http://localhost:8002/default/services
+#http://localhost:8080/ - For API call
+#http://localhost:8081/ - For 
 services:
   # The PostgreSQL Database
   kong-database:
