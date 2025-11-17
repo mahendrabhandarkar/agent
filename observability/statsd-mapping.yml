@@ -1,0 +1,5 @@
+mappings:
+  - match: "*"
+    name: "demo_metric"
+    labels:
+      demo: "true"

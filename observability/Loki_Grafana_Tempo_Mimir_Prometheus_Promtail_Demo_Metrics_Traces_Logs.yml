@@ -1,0 +1,89 @@
+version: "3.8"
+#Metrics → Prometheus prometheus-node-exporter or blackbox-exporter style dummy metrics.
+#Logs → promtail scrapes a container writing fake logs via busybox shell.
+#Traces → tempo with Jaeger demo app (jaegertracing/all-in-one) sending traces to Tempo.
+
+services:
+  grafana:
+    image: grafana/grafana:latest
+    container_name: grafana
+    ports:
+      - "3000:3000"
+    environment:
+      GF_SECURITY_ADMIN_USER: admin
+      GF_SECURITY_ADMIN_PASSWORD: admin
+    depends_on:
+      - loki
+      - tempo
+      - mimir
+    restart: unless-stopped
+
+  loki:
+    image: grafana/loki:2.9.0
+    container_name: loki
+    ports:
+      - "3100:3100"
+    command: -config.file=/etc/loki/local-config.yaml
+    volumes:
+      - ./loki-config.yaml:/etc/loki/local-config.yaml
+    restart: unless-stopped
+
+  promtail:
+    image: grafana/promtail:2.9.0
+    container_name: promtail
+    volumes:
+      - ./promtail-config.yaml:/etc/promtail/config.yaml
+    command: -config.file=/etc/promtail/config.yaml
+    depends_on:
+      - loki
+    restart: unless-stopped
+
+  tempo:
+    image: grafana/tempo:1.5.0
+    container_name: tempo
+    ports:
+      - "3200:3200"
+    command: -config.file=/etc/tempo/config.yaml
+    volumes:
+      - ./tempo-config.yaml:/etc/tempo/config.yaml
+    restart: unless-stopped
+
+  mimir:
+    image: grafana/mimir:2.4.0
+    container_name: mimir
+    command: -config.file=/etc/mimir/config.yaml
+    volumes:
+      - ./mimir-config.yaml:/etc/mimir/config.yaml
+    ports:
+      - "9009:9009"
+    restart: unless-stopped
+
+  demo-metrics:
+    image: prom/statsd-exporter
+    container_name: demo-metrics
+    environment:
+      - STATSD_EXPORTER_METRICS_MAPPING=/etc/statsd-mapping.yml
+    volumes:
+      - ./statsd-mapping.yml:/etc/statsd-mapping.yml
+    restart: unless-stopped
+
+  demo-logs:
+    image: busybox
+    container_name: demo-logs
+    command: sh -c "while true; do echo \"Demo log $(date)\"; sleep 2; done"
+    restart: unless-stopped
+
+  demo-traces:
+    image: jaegertracing/all-in-one:1.41
+    container_name: demo-traces
+    environment:
+      - COLLECTOR_ZIPKIN_HTTP_PORT=9411
+    ports:
+      - "16686:16686" # Jaeger UI
+    command: >
+      /go/bin/all-in-one
+      --collector.zipkin.host-port=:9411
+      --reporter.grpc.host-port=tempo:3200
+    depends_on:
+      - tempo
+    restart: unless-stopped

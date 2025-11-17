@@ -1,0 +1,19 @@
+server:
+  http_listen_port: 9009
+
+memberlist:
+  join_members: []
+
+storage:
+  tsdb:
+    path: /tmp/mimir/tsdb
+
+blocks_storage:
+  backend: local
+  local:
+    directory: /tmp/mimir/blocks
+
+distributor:
+  ring:
+    kvstore:
+      store: inmemory

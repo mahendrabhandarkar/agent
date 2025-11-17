@@ -119,7 +119,26 @@ services:
     depends_on:
       - spark-master
 
+# Apache Cloudberry (Analytical Database)
+  cloudberry:
+    image: apache/incubator-cloudberry:cbdb-build-rocky9-20251021-85c2f261
+    container_name: cloudberry
+    network_mode: host
+    hostname: cdw
+    environment:
+      CLOUD_BERRY_FE_USER: root
+      CLOUD_BERRY_FE_PASSWORD: root
+    ports:
+      - "8030:8030"   # Frontend (MySQL-compatible)
+      - "8040:8040"   # Backend
+    volumes:
+      - cloudberry_data:/var/lib/cloudberry
+    depends_on:
+      - minio
+    restart: always
+    
 volumes:
   kafka_data:
   minio_data:
   mysql_data:
+  cloudberry_data:
