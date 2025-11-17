@@ -2,7 +2,7 @@ version: "3.8"
 #Metrics → Prometheus prometheus-node-exporter or blackbox-exporter style dummy metrics.
 #Logs → promtail scrapes a container writing fake logs via busybox shell.
 #Traces → tempo with Jaeger demo app (jaegertracing/all-in-one) sending traces to Tempo.
-
+#Grafana Alloy - Grafana Alloy replaces Promtail + Prometheus agent + OTel Collector
 services:
   grafana:
     image: grafana/grafana:latest
