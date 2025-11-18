@@ -22,3 +22,5 @@ Semantic Kernel (SK) is an open-source SDK by Microsoft that helps developers in
 MCP Inspector --- open source option of testing MCP servers -- https://github.com/modelcontextprotocol/inspector
 https://www.youtube.com/shorts/mxf1hp_N_1k -- New MCP Server Configuration in VS Code -- 
 https://www.youtube.com/watch?v=WwPEcvkK7po -- GitHub Copilot Agent + Figma MCP Server: AI-Powered UI Development Demo --- https://github.com/GLips/Figma-Context-MCP
+https://mcp.deepwiki.com/mcp
+https://mcp.notion.com/mcp
