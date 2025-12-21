@@ -174,3 +174,4 @@ while(true) {
 Agentic Frameworks for complex and scalabale AI agents:
 Example: Langraph, etc
 
+print(model) for a Gemma Causal LM with LoRA adapters attached (e.g., via PEFT). This is representative output (shortened for readability), similar to what you’d see in PyTorch / Hugging Face.

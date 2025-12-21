@@ -46,3 +46,5 @@ https://www.youtube.com/watch?v=fFgyOucIFuk ---- Feed Your OWN Documents to a Lo
 Koboldcpp -- Run LLM Locally on PC ---  <br />
 JEPA [Joint Embedding Predictive Architecture] framework - <br />
 Train Word Embeddings with Word2Vec in python from Scratch --- <br />
+TRMs [Tiny Recursion Model] --- 7 billion parameters --- <br />
+Retrofit, Ktor, Koin, Coroutines, Room, Jet Compose UI toolkit,
