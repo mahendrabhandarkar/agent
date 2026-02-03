@@ -55,3 +55,6 @@ docker-compose -f bugzilla_docker_compose.yml up -d
 
 docker-compose -f devsecops_docker_compose.yml pull
 docker-compose -f devsecops_docker_compose.yml up -d
+
+# to run command [ollama run llama2] in ollama container
+docker exec -it ollama ollama run llama2
