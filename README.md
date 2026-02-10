@@ -47,3 +47,5 @@ Koboldcpp -- Run LLM Locally on PC ---  <br />
 JEPA [Joint Embedding Predictive Architecture] framework - <br />
 Train Word Embeddings with Word2Vec in python from Scratch --- <br />
 TRMs [Tiny Recursion Model] --- 7 billion parameters --- <br />
+"The Stack v2" is a large-scale, opensource dataset for training code Large Language Models (LLMs) - https://huggingface.co/datasets/bigcode/the-stack-v2 [StarCoder2 models were trained on the Stack V2 <br />
+
