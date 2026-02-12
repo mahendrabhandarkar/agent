@@ -48,4 +48,4 @@ JEPA [Joint Embedding Predictive Architecture] framework - <br />
 Train Word Embeddings with Word2Vec in python from Scratch --- <br />
 TRMs [Tiny Recursion Model] --- 7 billion parameters --- <br />
 "The Stack v2" is a large-scale, opensource dataset for training code Large Language Models (LLMs) - https://huggingface.co/datasets/bigcode/the-stack-v2 [StarCoder2 models were trained on the Stack V2 <br />
-
+vLLM - https://docs.vllm.ai/en/latest/ - stands for virtual large language model, is a library of open source code maintained by the vLLM community. It helps large language models (LLMs) perform calculations more efficiently and at scale.
