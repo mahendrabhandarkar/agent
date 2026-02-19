@@ -1,0 +1,23 @@
+# dbt_project.yml
+name: my_trino_profile       # Your project name
+version: '1.0'               # Project version
+config-version: 2            # Always 2 for dbt >= 1.x
+
+profile: my_trino_profile    # Name of profile in profiles.yml
+
+# Paths
+model-paths: ["models"]     # Where your model SQL files are
+analysis-paths: ["analysis"] # Optional, for analysis files
+macro-paths: ["macros"]      # Optional, for macros
+test-paths: ["tests"]        # Optional, for tests
+
+# Target directories
+target-path: "target"        # Where compiled SQL goes
+clean-targets:
+  - "target"
+  - "dbt_modules"            # Default
+
+# Optional configs per model
+models:
+  my_trino_profile:
+    +materialized: view      # Default materialization (view, table, ephemeral)

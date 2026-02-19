@@ -4,13 +4,7 @@
 # ClickHouse
 # JupyterLab
 # Ready for Spring Boot to connect via JDBC / REST
-
-# Service	    URL
-# MinIO Console	http://localhost:9001
-# Spark UI	    http://localhost:8080
-# Trino UI	    http://localhost:8081
-# ClickHouse	http://localhost:8123
-# JupyterLab	http://localhost:8888
+# dbt
 
 version: "3.9"
 
@@ -28,6 +22,41 @@ services:
       - "9001:9001"
     volumes:
       - minio-data:/data
+    networks:
+      - databricksnetwork
+
+  hive-metastore:
+    image: apache/hive:4.2.0
+    container_name: hive-metastore
+    environment:
+      HIVE_METASTORE_USER: hive
+      HIVE_METASTORE_PASSWORD: hive
+      HIVE_METASTORE_DB: metastore
+      HIVE_METASTORE_HOST: hive-metastore
+      HIVE_METASTORE_PORT: 9083
+      MINIO_ENDPOINT: http://minio:9000
+      MINIO_ACCESS_KEY: minio
+      MINIO_SECRET_KEY: minio123
+    command: >
+      /opt/hive/bin/hive --service metastore
+    ports:
+      - "9083:9083"
+    depends_on:
+      - minio
+      - hive-postgres
+    networks:
+      - databricksnetwork
+
+  hive-postgres:
+    image: postgres:15
+    environment:
+      POSTGRES_USER: hive
+      POSTGRES_PASSWORD: hive
+      POSTGRES_DB: metastore
+    ports:
+      - "5432:5432"
+    networks:
+      - databricksnetwork
 
   spark:
     image: apache/spark:3.4.1
@@ -40,6 +69,8 @@ services:
       - "8080:8080"
     environment:
       SPARK_NO_DAEMONIZE: "true"
+    networks:
+      - databricksnetwork
 
   spark-worker:
     image: apache/spark:3.4.1
@@ -52,12 +83,36 @@ services:
       - spark
     environment:
       SPARK_NO_DAEMONIZE: "true"
+    networks:
+      - databricksnetwork
 
   trino:
-    image: trinodb/trino:435
+    image: trinodb/trino:479
     container_name: trino
     ports:
       - "8081:8080"
+    volumes:
+      - ./trino/etc/catalog/iceberg.properties:/etc/trino/catalog/iceberg.properties:Z
+      - trino-data:/data
+    depends_on:
+      - hive-metastore
+      - minio
+    networks:
+      - databricksnetwork
+
+  dbt:
+    image: ghcr.io/dbt-labs/dbt-core:1.11.4
+    container_name: dbt
+    volumes:
+      - ./dbt:/usr/app
+    working_dir: /usr/app
+    ports:
+      - "8085:8085"
+    depends_on:
+      - trino
+    entrypoint: ["bash", "-c", "pip install dbt-trino && sleep infinity"]
+    networks:
+      - databricksnetwork
 
   clickhouse:
     image: clickhouse/clickhouse-server:23.8
@@ -65,6 +120,8 @@ services:
     ports:
       - "8123:8123"
       - "9002:9000"
+    networks:
+      - databricksnetwork
 
   jupyter:
     image: jupyter/pyspark-notebook:spark-3.4.1
@@ -73,6 +130,13 @@ services:
       - "8888:8888"
     depends_on:
       - spark
+    networks:
+      - databricksnetwork
 
 volumes:
   minio-data:
+  trino-data:
+
+networks:
+  databricksnetwork:
+    driver: bridge
