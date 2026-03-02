@@ -26,6 +26,7 @@ ManasAI -- World first autonomous AI Agent
 Manus --- https://manus.im/
 https://rogo.ai/ -- Investment Banking AI
 Task Automation Agents: Tools like SugarAGI and autiGPT can automate such workflows using multiple tools in sequence.
+https://www.lawgichub.com/ -- Law based agent 
 
 Coding Assistant Agent:
 E-Commerce and Product Search Agent:
