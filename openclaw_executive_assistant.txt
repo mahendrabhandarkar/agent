@@ -1,0 +1,12 @@
+OpenClaw -- executive assistant -- https://medium.com/the-tech-show/your-own-personal-openclaw-ai-agent-for-just-2-month-1fae767202f2
+https://www.youtube.com/watch?v=n2a1FfqjHcU --- Local OpenClaw & Ollama in 27 minutes
+Agentic Human -- youtube 
+X.AI pro version for cheap token
+OpenClaw File System
+KPI.md -- for KPI
+Feedback.md -- for failure self feedback
+SOL.md -- 
+instructions.md --
+ollama launch openclaw
+openai up setup
+openclaw skills
