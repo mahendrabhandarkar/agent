@@ -1,0 +1,29 @@
+skills.jar -- has free course
+Skills.io
+
+/config
+/context
+/model
+! cat claude.md
+/init improve my claud.md
+double space to go back old commands
+sorry proceed
+/rename improve-claude-md
+/ide 
+/rewind
+/clear new
+/branch 
+/plugins
+/insights
+claude --help
+claude -p 'check code quality'
+/btw 
+
+git worktree add ../bug-1
+git worktree add ../bug-2
+git branch
+cd bug-1
+
+
+LSP [Language service protocol]
+
