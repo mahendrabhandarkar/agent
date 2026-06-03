@@ -1,3 +1,4 @@
+#Antigravity, Gemini CLI, Opencode, Amazon Q VSCode Extension, Kiro CLI, Free Buff -- Free Coding AI Assistant
 # agent [continue.dev for Intellj / AssistAI for eclipse] - Integrate with OLLAMA
 Embedding Neo4j in your Java application
 Stockashtic
