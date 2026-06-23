@@ -11,3 +11,6 @@ ollama launch openclaw
 openai up setup
 openclaw skills
 #openhermes -- alternative of openclaw
+
+# http://private.meteor.ai 
+# 

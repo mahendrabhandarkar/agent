@@ -1,0 +1,97 @@
+Private AI
+- opencloud claude bot
+
+Machine discover the rules itself
+
+Attention is everything -- Concept of Transformers -- Read the data parallely.
+
+The Secret Formula --- The Library Analogy
+--- Attention(Q, K, V) = softmax (QK) / root dx * V
+K - key
+V - value
+Q - query 
+
+Index to get most important information extract and provide
+
+How super alino is effecting india?
+
+Multi-Head Attention :
+
+Talent Turin -- Famous for tunning machine. Father of compuation and programming.
+Deep Luke and Gary Cosporof -- Chess Program
+Introduction of Attention 
+Introduction of chatgpt
+
+Agentic AI -- High level task -- It will figure what to do.
+
+The MAN Behind NEAR
+-- ELab -- A Ukrainian kid who got obsessed with AI in 2001. Coauthor of Attention is everything
+
+A payment problem become a blockchain --- NEAR Blockchain
+
+Blockchain is decentralized ledger. It is immutable. Possible because of cryptography.
+
+The Agent Revolution
+-- Watch an agent work for you.
+
+AI agents with wallets are dangerous.
+
+AI with blockchain ---
+
+Blockchain wallet with AI rulebook.
+-- BKC search based pricing
+
+What is Finality in blockchain --- confirmation of doing transaction.
+Confirmation vs Finalization --- Until forks on chain. Finalize means your transaction cannot alter.
+Canonical chain ---
+Mechanism of slashing in blockchain --
+
+Un-responsive blockchain -- 
+
+Your AI. Your rules. On-chain
+-- User Owned AI Agents
+-- NEAR AI Hub -- similar to huggingface
+-- Chain Signatures
+
+Spending Cap of Blockchain
+DeepFI protocol
+
+Monard Blockchain --- 
+
+Encryption covers two of three states. One as always left exposed.
+
+Bitlocker -- Incryption at Risk (AES-256), In Transit (TLS 1.3), In Use Processing (decryption in RAM)
+
+A TEE is an encrypted vault -- Inside the CPU Itself.
+-- TDX -- [Trust Domain Extensions]
+
+Remote Attestation:
+The Verification check -- Valid <==> Verify(pk validity, pie, H) = 1 ^ H = Hypothetical
+
+What TEEs protect -- and what they don't
+
+NEAR AI's Confidential GPU Marketplace
+NVIDIA H100 + TEE = Confidential
+
+IronClaw runs inside the TEE. That changes everything.
+Alternative flavour of OpenClaw and Clawbot
+IronClawIronClaw is Framework which we used to build agents. Rust framework. Stronger compile time grauntee.
+
+The CLAW SUITE:
+The History of AI Agents
+ELIZA - MIT
+ChatGpt - ReAct Framework
+AutoGPT & Baby (AG) go viral
+Agent framework Mature
+
+OpenClaw: How a Side Project moved the Entire Industry
+IronClaw: Secure AI Agents built in Rust -- Multi Agent channel processing. Prompt Injection. WASM Sandbox.
+
+Agents That Think in Parellel -- Job State Machine
+Skills : Context-Activated Intelligence
+Persistent Memory:
+Machine-to-machine markets: Going to be idealist future.
+
+NEAR LEGION: A community of NEAR ecosystems
+Build. Grow. Earn. Near Tokens.
+ArQ (MontaQ Labs) -- 
