@@ -13,4 +13,14 @@ openclaw skills
 #openhermes -- alternative of openclaw
 
 # http://private.meteor.ai 
-# 
+# NEAR Legion India [Private AI Infrastructure with security]
+
+OpenClaw -- Open-source tool -- Has Local Gateway -- We can use Agent Skills from ClawHub
+OpenClaw Plugins, OpenClaw CLI, 
+Harness -- Arbitride Inbuit Tools
+Can utilize openclaw in Amazon LightSail, Amazon Biz, Amazon Bedrock Agent Core, Amazon EKS Services
+Hands on Guide available on Amazon.
+Multi-Tanency is major issue while running AI agent.
+Channel Sharing -- Openclaw setting to create main agent.
+Difference in AI Agent Skills and AI Agent Tools. 
+Identity.md, Soul.md, Tools.md, etc.
