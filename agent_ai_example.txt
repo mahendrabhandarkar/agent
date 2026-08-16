@@ -180,3 +180,9 @@ print(model) for a Gemma Causal LM with LoRA adapters attached (e.g., via PEFT).
 # Create LLM from Scratch another example
 https://www.youtube.com/watch?v=WNjCoUhxo-U : LLM from Scratch in Hindi
 https://github.com/AIAnytime/Hindi-GPT/blob/main/train_a_simple_model.ipynb
+
+https://claude.ai/new -- AI Agent
+https://polsia.com/new -- AI that run your company while you sleep.
+
+https://www.wron.ai/ -- Turn your Ideas into App
+https://www.viewmax.io/ -- Create stunning AI videos for YouTube Shorts, UGC, AI Ads, and more.
