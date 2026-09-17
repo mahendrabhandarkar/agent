@@ -43,3 +43,45 @@ BGE models are powerful embedding models for various tasks, including semantic s
 You can download and store them locally for faster access and offline use. 
 Libraries like LangChain and LlamaIndex simplify the process of loading and using BGE models locally. 
 Consider using the ipex-llm optimizations for Intel CPUs and GPUs when working with LangChain. 
+
+-----------------------------------------------------------------------------------------------------------------------------------------
+Tools Used:
+AI -- Code in 'C' language
+ML -- Python, Sklearn, CPU Compute
+DL -- Python, error functions, django, flask framework, crew, strands
+LLM-- Data + Pytjon + TensorFlow algorithm + (SCUDA) + Responsible AI (LangChain, LamaIndex)
+
+-- Summarization
+-- Text Generation
+-- Classification
+-- Openended Classification
+-- Information Extraction
+
+Platform -- https://platform.openai.com/tokenizer
+
+Agentic AI Framework -- Agents, Large language models (LLMs), Tools, RAG
+Circuit Break Mechanism (Example: Multimodal interference)
+
+CrewAI, LangGraph, LangChain, LamaIndex, Strands Agent SDK
+KIRO IDE -- AWS Builder ID option
+
+AI divided into 3 major categories
+-- Supervised Machine Learning [Works on labeled data]
+-- UnSupervised Machine Learning [Works on unlabeled datasets]
+-- Reinforcement Learning -- [Works by using Clustering Alogorithm - Classification [Example: Binary [Yes/No], Multiclass [Yes/No/Maybe], Regression - Contineous Values [Example: Stock Market]]
+
+https://scikit-learn.org/stable/
+Statistical Understanding of Alogorithm
+Neuron Works -- Neuron connection with brain [ANN, CNN, HNN, RNN]
+Deep Learning
+Transformer Algorithm
+
+Amazon Bedrock -- Marketplace model need to be deployed. Serverless -- no need of deployment, its already deployed. User moduleId.
+LLM -- As a judge [Example: Success Matrix]
+LLM can't do prompt decomposition -- means can't divide tasks into sub-tasks.
+
+Python boto3 -- AWS SDK for Python
+AWS SDK for Java
+
+Tokenization Types: Word, Sentence, Characters, 2 char, 4 char, small. alphabet, special character.
+

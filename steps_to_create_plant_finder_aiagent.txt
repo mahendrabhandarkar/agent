@@ -4,3 +4,5 @@ https://www.youtube.com/watch?v=9Crrhz0pm8s ---- Spring AI Full Course with Proj
 Git Link: https://github.com/EmbarkXOfficial/spring-ai-masters
 
 Integrate Huggingface or Kaggle in Spring AI
+
+------------------------------------------------------------------------------------------------------------------------------------
