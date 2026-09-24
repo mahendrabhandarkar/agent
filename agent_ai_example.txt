@@ -186,3 +186,8 @@ https://polsia.com/new -- AI that run your company while you sleep.
 
 https://www.wron.ai/ -- Turn your Ideas into App
 https://www.viewmax.io/ -- Create stunning AI videos for YouTube Shorts, UGC, AI Ads, and more.
+ROVO DEV -- for development; Enterprise level tool
+https://community.atlassian.com/learning/course/get-started-quickly-with-rovo
+https://community.atlassian.com/learning/course/get-help-from-rovo-search-and-chat
+https://community.atlassian.com/learning/course/create-and-enhance-content-with-rovo
+https://community.atlassian.com/learning/course/work-with-rovo-agents-and-build-your-own
