@@ -191,3 +191,26 @@ https://community.atlassian.com/learning/course/get-started-quickly-with-rovo
 https://community.atlassian.com/learning/course/get-help-from-rovo-search-and-chat
 https://community.atlassian.com/learning/course/create-and-enhance-content-with-rovo
 https://community.atlassian.com/learning/course/work-with-rovo-agents-and-build-your-own
+https://support.smartbear.com/zephyr/docs/en/zephyr-agent-for-rovo.html
+---------------------------------------------------------------------------------------------------------------------------
+Guardrails model -- in front of foundation model or customization model
+
+Gemma 4, Edge Model e2b and e4b.
+GGUF extension -- Gega font
+Speech to Text -- Claude, Alexa, Siri, Google
+Text to Speech 
+
+LightRT Model of every GGUF model.
+Matrices used for showing next word
+4B * 4 Bits = 2 GB
+TTS -- 
+Phoneix -- TTS nodes -- convert into audio
+SherpaTTS --- Text-to-speech engine based on Next-gen Kaidi
+Kokur -- 
+
+LamaCPP - repository clone. 
+melspectogram.mmx 
+
+PrivateMode AI ---
+
+AI Pair Programming ---
